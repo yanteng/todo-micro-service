@@ -1,0 +1,16 @@
+server:
+ port: 8084
+ context-path: /api
+
+zuul:
+  debug:
+    request: true
+  routes:
+    users:
+      path: /users/**
+      url: http://user-service:8083
+      stripPrefix: false
+    todos:
+      path: /todos/**
+      url: http://todo-service:8082
+      stripPrefix: false

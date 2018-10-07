@@ -5,6 +5,6 @@ spring:
         git:
           uri: https://github.com/yanteng/todo-micro-service.git
           search-paths: cloud-config
-          timeout: 60
+          timeout: 6
 server:
   port: 8081
