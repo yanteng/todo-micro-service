@@ -5,7 +5,6 @@ spring:
     active: dev
   cloud:
     config:
-      label: master
       uri: http://localhost:8081
 
 #spring:

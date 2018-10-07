@@ -8,9 +8,9 @@ zuul:
   routes:
     users:
       path: /users/**
-      url: http://user-service:8083
+      url: http://localhost:8083
       stripPrefix: false
     todos:
       path: /todos/**
-      url: http://todo-service:8082
+      url: http://localhost:8082
       stripPrefix: false
