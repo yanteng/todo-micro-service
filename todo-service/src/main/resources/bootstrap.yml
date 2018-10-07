@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+#spring:
+#  config:
+#    location: ../config/todo-service/application.yml

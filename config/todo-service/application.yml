@@ -1,0 +1,6 @@
+spring: 
+ datasource: 
+  url: jdbc:mysql://localhost:3306/micro_service_todo?createDatabaseIfNotExist=true
+  username: root
+server: 
+ port: 8081
