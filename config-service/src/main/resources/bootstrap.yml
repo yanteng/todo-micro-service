@@ -1,4 +1,10 @@
 spring:
   cloud:
     config:
-      uri:
+      server:
+        git:
+          uri: https://github.com/yanteng/todo-micro-service.git
+          search-paths: cloud-config
+          timeout: 60
+server:
+  port: 8081

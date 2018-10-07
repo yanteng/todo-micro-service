@@ -1,3 +1,12 @@
 spring:
-  config:
-    location: ../config/zuul-service/application.yml
+  application:
+    name: zuul-service
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8081
+
+#spring:
+#  config:
+#    location: ../config/zuul-service/application.yml
