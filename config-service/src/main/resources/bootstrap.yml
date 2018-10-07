@@ -7,4 +7,4 @@ spring:
           search-paths: cloud-config
           timeout: 6
 server:
-  port: 8081
+  port: 8888
