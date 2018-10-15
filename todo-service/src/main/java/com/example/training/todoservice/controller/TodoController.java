@@ -3,10 +3,10 @@ package com.example.training.todoservice.controller;
 import com.example.training.todoservice.model.Todo;
 import com.example.training.todoservice.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/todos")
@@ -14,8 +14,8 @@ public class TodoController {
     @Autowired
     TodoService todoService;
     @GetMapping
-    public List<Todo> getAllTodos(){
-        return todoService.getAllTodos();
+    public Page<Todo> getTodos(Pageable pageable){
+        return todoService.getTodos(pageable);
     }
     @GetMapping("/{id}")
     public Todo getTodoById(@PathVariable("id") Long id){

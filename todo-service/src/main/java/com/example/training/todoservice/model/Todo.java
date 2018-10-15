@@ -4,10 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,4 +22,11 @@ public class Todo {
     private String status;
     private Date dueDate;
     private Long userId;
+    @ManyToMany
+    @Cascade(value = CascadeType.SAVE_UPDATE)
+    @JoinTable(name = "todo_tag",
+            joinColumns = @JoinColumn(name = "todo_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private Set<Tag> tags;
 }
