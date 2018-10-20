@@ -2,7 +2,7 @@ spring:
   application:
     name: todo-service
   profiles:
-    active: dev
+    active: container
   cloud:
     config:
       uri: http://config-service:8888
