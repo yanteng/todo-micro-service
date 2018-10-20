@@ -17,6 +17,9 @@ public class TagService {
         return tagRepository.findByNameAndUserId(name,userId);
     }
 
+    public List<Tag> findByUserId(Long userId){
+        return tagRepository.findByUserId(userId);
+    }
     public Tag save(Tag tag) {
         return tagRepository.save(tag);
     }

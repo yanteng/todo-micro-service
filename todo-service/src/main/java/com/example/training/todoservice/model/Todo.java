@@ -20,6 +20,7 @@ public class Todo {
     private Long id;
     private String name;
     private String status;
+    @Temporal(TemporalType.DATE)
     private Date dueDate;
     private Long userId;
     @ManyToMany

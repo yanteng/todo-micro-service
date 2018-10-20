@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface TagRepository extends JpaRepository<Tag, Long> {
     public List<Tag> findByNameAndUserId(String name, Long id);
+
+    public List<Tag> findByUserId(Long userId);
 }
