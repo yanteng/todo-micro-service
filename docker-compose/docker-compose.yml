@@ -5,3 +5,37 @@ services:
     restart: always
     ports:
       - "8888:8888"
+
+  zuul-service:
+    image: tyan/zuul-service
+    restart: always
+    ports:
+      - "8084:8084"
+
+  todo-service:
+    image: tyan/todo-service
+    ports: 
+      - "8082:8082"
+    depends_on:
+      - "mysql"
+
+  user-service:
+    image: tyan/user-service
+    restart: always
+    ports:
+      - "8083:8083"
+    depends_on:
+      - "mysql"
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "3307:3306"
+    restart: always
+
+  todo-js:
+    image: tyan/todo-js
+    ports:
+      -  "81:81"
