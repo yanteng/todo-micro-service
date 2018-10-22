@@ -1,26 +1,26 @@
 version: "3"
 services:
   config-service:
-    image: tyan/config-service
+    image: twyanteng/config-service
     restart: always
     ports:
       - "8888:8888"
 
   zuul-service:
-    image: tyan/zuul-service
+    image: twyanteng/zuul-service
     restart: always
     ports:
       - "8084:8084"
 
   todo-service:
-    image: tyan/todo-service
+    image: twyanteng/todo-service
     ports: 
       - "8082:8082"
     depends_on:
       - "mysql"
 
   user-service:
-    image: tyan/user-service
+    image: twyanteng/user-service
     restart: always
     ports:
       - "8083:8083"
@@ -36,6 +36,6 @@ services:
     restart: always
 
   todo-js:
-    image: tyan/todo-js
+    image: twyanteng/todo-js
     ports:
       -  "81:81"
